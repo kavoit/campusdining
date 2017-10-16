@@ -1,0 +1,38 @@
+import datetime, time
+ctime = datetime.datetime.now()
+
+def day():
+    today = datetime.datetime.today().weekday()
+    return today
+
+def hours():
+    if day() == range(0,3):
+        chicfilaopen = ctime.replace(hour=7, minute=30, second=0, microsecond=0)
+        chicfilaclose = ctime.replace(hour=20, minute=0, second=0, microsecond=0)
+    elif day() == 4:
+        chicfilaopen = ctime.replace(hour=7, minute=30, second=0, microsecond=0)
+        chicfilaclose = ctime.replace(hour=17, minute=0, second=0, microsecond=0)
+    else:
+        chicfilaopen = ctime.replace(hour=7, minute=30, second=0, microsecond=0)
+        chicfilaclose = ctime.replace(hour=17, minute=0, second=0, microsecond=0)
+    copen = chicfilaopen.time()
+    global copen
+
+now = datetime.datetime.now
+hours()
+
+if now.time() < copen.time():
+    print "OPEN"
+else:
+    print "FAILURE"
+    
+def whereEat():
+    campus = input("Are you looking for food on Belknap or HSC? ")
+    if campus == "Belknap":
+        print("Belknap it is!")
+        whenEat()
+    elif campus == "HSC":
+        print("HSC it is!")
+        whenEat()
+    else:
+        print("Invalid response. Try again.")
